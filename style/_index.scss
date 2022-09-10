@@ -1,0 +1,179 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $primary-font;
+  font-size: 16px;
+}
+
+.container {
+  max-width: 1440px;
+  display: flex;
+  margin: auto;
+  width: 100%;
+
+  .left-wrapper {
+    width: 100%;
+    background-image: url(../images/bg-pattern-desktop.svg);
+
+    .left-container {
+      margin: auto;
+      width: 55%;
+      margin-top: 3em;
+      display: flex;
+      flex-direction: column;
+      gap: 2em;
+
+      .main-title {
+        margin-top: 7em;
+
+        h1 {
+          font-size: 4.5em;
+          font-weight: 400;
+          text-transform: uppercase;
+          letter-spacing: 0.3em;
+
+          span {
+            // font-size: 1em;
+            font-weight: 300;
+            color: $DesaturatedRed;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+          }
+        }
+      }
+
+      .paragraph {
+        p {
+          line-height: 1.7em;
+          font-size: 1.1em;
+          font-weight: 400;
+          color: $DesaturatedRed;
+        }
+      }
+
+      .input-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+
+        .input {
+          position: relative;
+
+          input {
+            width: 100%;
+            padding: 1em 2em;
+            border-radius: 2em;
+            border: 1px solid rgba($DesaturatedRed, 0.5);
+            outline: none;
+            font-size: 1em;
+            font-weight: 400;
+            font-family: $primary-font;
+
+            &::placeholder {
+              color: rgba($DesaturatedRed, 0.5);
+              font-weight: 400;
+              font-family: $primary-font;
+            }
+          }
+
+          :nth-child(2) {
+            position: absolute;
+            right: 25%;
+            top: 25%;
+          }
+
+          button {
+            padding: 1.05em 3em;
+            border-radius: 2em;
+            border: none;
+            background-image: linear-gradient($Linear);
+            position: absolute;
+            right: 0;
+            bottom: 2%;
+
+            &:hover {
+              opacity: 0.5;
+              box-shadow: 0 16px 16px;
+            }
+          }
+        }
+
+        .error-msg {
+          span {
+            font-size: 0.9em;
+            color: rgba($SoftRed, 0.8);
+            margin-left: 2.3em;
+          }
+
+          :nth-child(2) {
+            font-size: 0.9em;
+            color: rgb(1, 209, 1);
+            margin-left: 2.3em;
+          }
+        }
+      }
+    }
+  }
+}
+
+.hidden {
+  display: none !important;
+}
+
+@media screen and (max-width: 420px) {
+  body {
+    font-size: 14px;
+  }
+
+  .container {
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+
+    .left-wrapper {
+      .left-container {
+        width: 80%;
+
+        .main-title {
+          margin-top: 25em;
+          text-align: center;
+
+          h1 {
+            font-size: 3.5em;
+            font-weight: 600;
+          }
+        }
+
+        .paragraph {
+          p {
+            text-align: center;
+          }
+        }
+
+        .input-wrapper {
+          margin-bottom: 5em;
+
+          .input {
+            button {
+              padding: 0.8em 2em;
+            }
+          }
+        }
+      }
+    }
+
+    .right-wrapper {
+      position: absolute;
+      top: 13%;
+      width: 100%;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
